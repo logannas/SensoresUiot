@@ -227,7 +227,7 @@ char *BaseProtocol_esp8266::make_raw_data(Service s, char *data, int sensitive, 
   json = this->append_json(json, "mac", this->mac.c_str(), 0);
   json = this->append_json(json, "sensitive", String(sensitive).c_str(),1);
   json = this->append_json(json, "serviceNumber", String(s.number).c_str(),1);
-  json = this->append_json(json, "values", data, s.numeric);
+  json = this->append_json(json, "value", data, s.numeric);
   json[strlen(json)-1] = '}';
   // Serial.println(json);
   return json;
